@@ -52,7 +52,7 @@ function AdminDashboard() {
       setLoadingProducts(true)
 
       const response = await fetch(
-        "http://127.0.0.1:8000/products/"
+        `${import.meta.env.VITE_API_URL}/products/`
       )
 
       if (!response.ok) {
@@ -75,7 +75,7 @@ function AdminDashboard() {
       setLoadingOrders(true)
 
       const response = await fetch(
-        "http://127.0.0.1:8000/admin/orders",
+        `${import.meta.env.VITE_API_URL}/admin/orders`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -210,7 +210,7 @@ function AdminDashboard() {
       )
 
       const response = await fetch(
-        "http://127.0.0.1:8000/admin/upload-image",
+        `${import.meta.env.VITE_API_URL}/admin/upload-image`,
         {
           method: "POST",
           headers: {
@@ -261,8 +261,8 @@ function AdminDashboard() {
       }
 
       const url = editingProduct
-        ? `http://127.0.0.1:8000/admin/products/${editingProduct.id}`
-        : "http://127.0.0.1:8000/admin/products"
+        ? `${import.meta.env.VITE_API_URL}/admin/products/${editingProduct.id}`
+        : `${import.meta.env.VITE_API_URL}/admin/products`
 
       const method = editingProduct
         ? "PUT"
@@ -325,7 +325,7 @@ function AdminDashboard() {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/admin/products/${productId}`,
+        `${import.meta.env.VITE_API_URL}/admin/products/${productId}`,
         {
           method: "DELETE",
           headers: {
@@ -362,7 +362,7 @@ function AdminDashboard() {
   async function toggleProduct(product) {
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/admin/products/${product.id}`,
+        `${import.meta.env.VITE_API_URL}/admin/products/${product.id}`,
         {
           method: "PUT",
           headers: {
@@ -403,7 +403,7 @@ function AdminDashboard() {
   ) {
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/admin/orders/${orderId}/status`,
+        `${import.meta.env.VITE_API_URL}/admin/orders/${orderId}/status`,
         {
           method: "PUT",
           headers: {

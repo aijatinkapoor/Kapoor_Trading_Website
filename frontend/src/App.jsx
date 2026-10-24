@@ -30,7 +30,7 @@ function Store() {
 
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/products/")
+    fetch(`${import.meta.env.VITE_API_URL}/products/`)
       .then((response) => response.json())
       .then((data) => {
         setProducts(data)
