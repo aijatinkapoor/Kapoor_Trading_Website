@@ -63,25 +63,36 @@ function Store() {
 
       <header className="navbar">
 
-        <div>
-          <h1>
-            Kapoor Diesels
-          </h1>
+  <div>
+    <h1>
+      Kapoor Diesels
+    </h1>
 
-          <p>
-            Quality products at the best prices
-          </p>
-        </div>
+    <p>
+      Quality products at the best prices
+    </p>
+  </div>
 
 
-        <button
-          className="cart-button"
-          onClick={() => navigate("/cart")}
-        >
-          🛒 Cart ({cartItemCount})
-        </button>
+  <div className="navbar-actions">
 
-      </header>
+    <button
+      className="admin-login-nav-button"
+      onClick={() => navigate("/admin/login")}
+    >
+      Admin Login
+    </button>
+
+    <button
+      className="cart-button"
+      onClick={() => navigate("/cart")}
+    >
+      🛒 Cart ({cartItemCount})
+    </button>
+
+  </div>
+
+</header>
 
 
       <main>
